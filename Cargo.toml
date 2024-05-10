@@ -1,0 +1,25 @@
+[package]
+name = "uwpm"
+description = "UW's PowerMacros"
+version = "0.1.0"
+edition = "2021"
+build = "build.rs"
+
+[profile.release]
+strip = true
+
+[dependencies]
+active-win-pos-rs = "0.8.3"
+rodio = "0.17.3"
+serde = { version = "1.0.198", features = ["std", "derive"] }
+serde_json = "1.0.116"
+windows = "0.56.0"
+windows-hotkeys = "0.2.1"
+winmix = "0.1.2"
+
+[build-dependencies]
+winresource = "0.1.17"
+
+[package.metadata.winresource]
+LegalCopyright = "Copyright © 2024 UW"
+OriginalFilename = "uwpm.exe"
