@@ -160,7 +160,6 @@ fn main() {
                 for session in &sessions {
                     let exe = Path::new(&session.path).file_name().unwrap();
 
-                    // TODO: use process name
                     if exe != focused && session.pid != std::process::id() {
                         if session.vol.get_mute().unwrap() {
                             zen_mode = true;
