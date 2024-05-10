@@ -1,28 +1,28 @@
 use active_win_pos_rs::get_active_window;
-use std::process::Command;
-use std::fs::{self, File};
-use std::path::Path;
-use std::io::BufReader;
+use rodio::{Decoder, OutputStream, Sink};
 use serde::Deserialize;
+use std::fs::{self, File};
+use std::io::BufReader;
+use std::path::Path;
+use std::process::Command;
 use windows_hotkeys::keys::{ModKey, VKey};
 use windows_hotkeys::{HotkeyManager, HotkeyManagerImpl};
-use rodio::{Decoder, OutputStream, Sink};
 use winmix::WinMix;
 
 #[derive(Deserialize)]
 struct SudoF4Config {
-    enabled: bool
+    enabled: bool,
 }
 
 #[derive(Deserialize)]
 struct ZenConfig {
-    enabled: bool
+    enabled: bool,
 }
 
 #[derive(Deserialize)]
 struct Config {
     sudo_f4: SudoF4Config,
-    zen: ZenConfig
+    zen: ZenConfig,
 }
 
 fn load_config() -> Config {
@@ -69,7 +69,8 @@ fn play_audio(sink: &Sink, file: &str) {
 fn main() {
     let config = load_config();
 
-    println!(r#"
+    println!(
+        r#"
 
   _   _ __      __ ( )           
  | | | |\ \    / / |/  ___   
@@ -85,7 +86,8 @@ fn main() {
 |_|  \___/ \_/\_/ \___| |_|  |_|  |_|\__,_|\__||_|  \___//__/ 
                                                               
 
-"#);
+"#
+    );
 
     let (_stream, audio_out) = OutputStream::try_default().unwrap();
 
@@ -114,12 +116,16 @@ fn main() {
                 .expect("[SudoF4] Failed to execute 'taskkill'");
 
             if output.status.success() {
-                println!("[SudoF4] Killed process with PID {}: {}", win.process_id, win.title);
+                println!(
+                    "[SudoF4] Killed process with PID {}: {}",
+                    win.process_id, win.title
+                );
                 play_audio(&audio_sink, "assets/SudoF4_ok.ogg");
             } else {
                 println!(
                     "[SudoF4] Failed to terminate process with PID {}: \n{}",
-                    win.process_id, String::from_utf8(output.stderr).unwrap()
+                    win.process_id,
+                    String::from_utf8(output.stderr).unwrap()
                 );
                 play_audio(&audio_sink, "assets/SudoF4_fail.ogg");
             }
@@ -160,17 +166,19 @@ fn main() {
                 for session in &sessions {
                     let exe = Path::new(&session.path).file_name().unwrap();
 
-                    if exe != focused && session.pid != std::process::id() {
-                        if session.vol.get_mute().unwrap() {
-                            zen_mode = true;
-                            break;
-                        }
+                    if exe != focused
+                        && session.pid != std::process::id()
+                        && session.vol.get_mute().unwrap()
+                    {
+                        zen_mode = true;
+                        break;
                     }
                 }
 
                 // Now do the actual toggling
                 zen_mode = !zen_mode;
 
+                // TODO: duplicated logic, refactor in the future
                 for session in sessions {
                     let exe = Path::new(&session.path).file_name().unwrap();
 
@@ -180,7 +188,10 @@ fn main() {
                 }
 
                 if zen_mode {
-                    println!("[Zen] Zen mode ENGAGED for {:?} (PID {} | {})", &focused, win.process_id, &win.title);
+                    println!(
+                        "[Zen] Zen mode ENGAGED for {:?} (PID {} | {})",
+                        &focused, win.process_id, &win.title
+                    );
                     play_audio(&audio_sink, "assets/Zen_engage.ogg");
                 } else {
                     println!("[Zen] Zen mode disengaged");
