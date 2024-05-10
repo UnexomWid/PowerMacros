@@ -7,7 +7,9 @@ For now, it contains these 2 macros:
 - **SudoF4**: forcefully close the current window via `Win + F4`, bypassing `Alt + F4` hooks ([read more here](https://github.com/UnexomWid/SudoF4)) 
 - **ZenMode**: mute everything except the focused window and system sounds via `Win + F2`
 
-This project is tailored specifically for me. I'm still developing macros..
+This project is tailored specifically for me. I'm still developing macros.
+
+# Contributing
 
 Code is messy. I plan to add other functionality, not just hotkeys.
 I'm focusing on getting stuff working rather than making it clean, because I'll refactor everything when I'm satisfied with the amount of content.
