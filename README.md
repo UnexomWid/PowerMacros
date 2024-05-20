@@ -1,16 +1,16 @@
 # About <a href="https://www.rust-lang.org/"><img align="right" src="https://img.shields.io/badge/Rust-1%2E73-f74c00?logo=Rust" alt="Rust 1.73" /></a>
 
-**UW's PowerMacros** is a Windows program that empowers the user with various *niche* macros that do very specific, powerful and magic things.
+**UW's PowerMacros** is a Windows program that empowers the user with various *niche* macros that do very specific, powerful and magic things. It relies on [AutoHotkey](https://www.autohotkey.com/).
 
 For now, it contains these 3 macros:
 
 - **SudoF4**: forcefully close the current window via `Win + F4`, bypassing `Alt + F4` hooks ([read more here](https://github.com/UnexomWid/SudoF4)) 
 - **ZenMode**: mute everything except the focused window and system sounds via `Win + F2`
-- **Unified Enter**: remaps numpad enter to normal enter
+- **Unified Enter**: remap numpad enter to normal enter
 
 # Installation
 
-You first need to install [Rust](https://www.rust-lang.org/) and [AutoHotkey v2](https://www.autohotkey.com/)
+You first need to install [Rust](https://www.rust-lang.org/) and [AutoHotkey v2](https://www.autohotkey.com/).
 
 Then clone PowerMacros:
 
@@ -34,7 +34,7 @@ That's it. Keep it running in the background.
 
 ## Macros
 
-PowerMacros relies on AutoHotkey. Simply modify the `uwpm.ahk` file to add/remove/edit macros.
+PowerMacros relies on AutoHotkey. Simply modify the `uwpm.ahk` file to add/remove/edit macros. See the [AHK v2 docs](https://www.autohotkey.com/docs/v2/) if you're not familiar with the syntax.
 
 ZenMode also relies on the Rust program, which is automatically executed via `start.bat`.
 It won't work if you just use the AHK script separately.
