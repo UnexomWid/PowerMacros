@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="public/logo.png" alt="powermacros">
+</p>
+
 # About <a href="https://www.rust-lang.org/"><img align="right" src="https://img.shields.io/badge/Rust-1%2E73-f74c00?logo=Rust" alt="Rust 1.73" /></a>
 
 **UW's PowerMacros** is a Windows program that empowers the user with various *niche* macros that do very specific, powerful and magic things. It relies on [AutoHotkey](https://www.autohotkey.com/).
