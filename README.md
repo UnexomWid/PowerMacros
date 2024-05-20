@@ -2,62 +2,50 @@
 
 **UW's PowerMacros** is a Windows program that empowers the user with various *niche* macros that do very specific, powerful and magic things.
 
-For now, it contains these 2 macros:
+For now, it contains these 3 macros:
 
 - **SudoF4**: forcefully close the current window via `Win + F4`, bypassing `Alt + F4` hooks ([read more here](https://github.com/UnexomWid/SudoF4)) 
 - **ZenMode**: mute everything except the focused window and system sounds via `Win + F2`
-
-# Contributing
-
-This project is tailored specifically for me. I'm still developing macros.
-
-Code is messy. I plan to add other functionality, not just hotkeys.
-I'm focusing on getting stuff working rather than making it clean, because I'll refactor everything when I'm satisfied with the amount of content.
-
-PRs for new macros and issues are welcome.
-However, if the macros don't fit within my use cases, feel free to fork this project and empower yourself with your own specific macros! ツ
+- **Unified Enter**: remaps numpad enter to normal enter
 
 # Installation
 
-You first need to install [Rust](https://www.rust-lang.org/).
+You first need to install [Rust](https://www.rust-lang.org/) and [AutoHotkey v2](https://www.autohotkey.com/)
 
-Then clone and install PowerMacros:
+Then clone PowerMacros:
 
 ```sh
 git clone https://github.com/UnexomWid/PowerMacros
-
-cd PowerMacros
-
-cargo install --path .
 ```
-
 
 # Usage
 
-Open a CMD window and run:
+Just run `start.bat` from this repo.
 
 ```sh
 cd <path_to_powermacros_repo>
 
-uwpm
+start.bat
 ```
 
-Keep it running in the background. If something doesn't work, run CMD as admin.
+That's it. Keep it running in the background.
 
-You can disable specific macros via `uwpm.json` in the current working directory (a default config is created on the first run).
+# Customizing
 
-It's recommended to run PowerMacros from a dedicated directory where it can store the config, like the repo dir. This is why you should CD into it before running.
+## Macros
 
-If you don't CD into a dedicated dir before running, the config will be created in the working dir, which will most likely be `C:/Windows/System32`, and you want to avoid that.
+PowerMacros relies on AutoHotkey. Simply modify the `uwpm.ahk` file to add/remove/edit macros.
 
-## Custom sounds
+ZenMode also relies on the Rust program, which is automatically executed via `start.bat`.
+It won't work if you just use the AHK script separately.
 
-Whenever you activate a macro, a custom sound can be played. Place them in `assets/` next to the config file and name them like this:
+## Sounds
 
-- `SudoF4_ok.ogg`: SudoF4 killed the current window
-- `SudoF4_fail.ogg`: SudoF4 failed to kill
-- `Zen_engage.ogg`: Zen Mode was engaged
-- `Zen_disengage.ogg`: Zen Mode was disengaged
+Create the `assets/` dir inside the repo folder (near `uwpm.ahk`), since that's where the sound files will be stored. Here are the current sounds:
+
+- `SudoF4.wav`: SudoF4 killed the current window
+- `Zen_engage.ogg`: ZenMode was engaged
+- `Zen_disengage.ogg`: ZenMode was disengaged
 
 # License <a href="https://github.com/UnexomWid/PowerMacros/blob/master/LICENSE"><img align="right" src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" /></a>
 
