@@ -1,9 +1,7 @@
 #SingleInstance Force
 
 TrySoundPlay(path) {
-    try {
-        SoundPlay path
-    } catch { }
+    try SoundPlay path
 }
 
 ; Unified Enter
