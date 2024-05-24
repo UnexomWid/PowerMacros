@@ -34,6 +34,7 @@ NumpadEnter::Enter
 
 ; MaximizeAny
 #F5::{
-    PostMessage 0x0112, 0xF030, 0, , "A"
-    TrySoundPlay "assets/SudoF4.wav"
+    ;           WM_SYSCOMMAND  SC_MAXIMIZE unused  No control  Active window
+    PostMessage 0x0112,        0xF030,     0,      ,           "A"
+    TrySoundPlay "assets/MaximizeAny.wav"
 }

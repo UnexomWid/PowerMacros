@@ -51,6 +51,7 @@ Create the `assets/` dir inside the repo folder (near `uwpm.ahk`), since that's 
 - `SudoF4.wav`: SudoF4 killed the current window
 - `Zen_engage.ogg`: ZenMode was engaged
 - `Zen_disengage.ogg`: ZenMode was disengaged
+- `MaximizeAny.ogg`: MaximizeAny maximized the current window
 
 # License <a href="https://github.com/UnexomWid/PowerMacros/blob/master/LICENSE"><img align="right" src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" /></a>
 
