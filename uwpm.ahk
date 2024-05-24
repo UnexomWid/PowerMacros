@@ -31,3 +31,9 @@ NumpadEnter::Enter
 
     file.Read(0)
 }
+
+; MaximizeAny
+#F5::{
+    PostMessage 0x0112, 0xF030, 0, , "A"
+    TrySoundPlay "assets/SudoF4.wav"
+}
