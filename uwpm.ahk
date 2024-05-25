@@ -9,8 +9,8 @@ NumpadEnter::Enter
 
 ; SudoF4
 #F4::{
-    active_id := WinGetID("A")
-    WinKill active_id
+    active_name := WinGetProcessName("A")
+    Run "taskkill" . " /f /im " . active_name, , "Hide"
     TrySoundPlay "assets/SudoF4.wav"
 }
 
