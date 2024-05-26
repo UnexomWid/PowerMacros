@@ -6,12 +6,13 @@
 
 **UW's PowerMacros** is a Windows program that empowers the user with various *niche* macros that do very specific, powerful and magic things. It relies on [AutoHotkey](https://www.autohotkey.com/).
 
-For now, it contains these 4 macros:
+For now, it contains these 5 macros:
 
 - **SudoF4**: forcefully close the current window via `Win + F4`, bypassing `Alt + F4` hooks ([read more here](https://github.com/UnexomWid/SudoF4)) 
 - **ZenMode**: mute everything except the focused window and system sounds via `Win + F2`
 - **MaximizeAny**: forcefully maximize the current window via `Win + F5`, even if the maximize button is disabled
 - **Unified Enter**: remap numpad enter to normal enter
+- **Universal Advance**: when ScrollLock is on, remap right arrow to enter so you can advance text in games via `>`
 
 # Installation
 

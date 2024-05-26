@@ -7,6 +7,11 @@ TrySoundPlay(path) {
 ; Unified Enter
 NumpadEnter::Enter
 
+; Universal Advance
+#HotIf GetKeyState("ScrollLock", "T")
+Right::Enter
+#HotIf
+
 ; SudoF4
 #F4::{
     active_name := WinGetProcessName("A")
