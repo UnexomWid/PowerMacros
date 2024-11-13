@@ -12,6 +12,16 @@ NumpadEnter::Enter
 Right::Enter
 #HotIf
 
+ScrollLock::{
+    If GetKeyState("ScrollLock", "T") {
+        SetScrollLockState("Off")
+        TrySoundPlay "assets/UniversalAdvance_disengage.wav"
+    } else {
+        SetScrollLockState("On")
+        TrySoundPlay "assets/UniversalAdvance_engage.wav"
+    }
+}
+
 ; SudoF4
 #F4::{
     active_name := WinGetProcessName("A")

@@ -12,7 +12,7 @@ For now, it contains these 5 macros:
 - **ZenMode**: mute everything except the focused window and system sounds via `Win + F2`
 - **MaximizeAny**: forcefully maximize the current window via `Win + F5`, even if the maximize button is disabled
 - **Unified Enter**: remap numpad enter to normal enter
-- **Universal Advance**: when ScrollLock is on, remap right arrow to enter so you can advance text in games via `>`
+- **Universal Advance**: when ScrollLock is on, remap Right Arrow to Enter so you can advance text in games via `>`
 
 # Installation
 
@@ -50,9 +50,11 @@ It won't work if you just use the AHK script separately.
 Create the `assets/` dir inside the repo folder (near `uwpm.ahk`), since that's where the sound files will be stored. Here are the current sounds:
 
 - `SudoF4.wav`: SudoF4 killed the current window
-- `Zen_engage.ogg`: ZenMode was engaged
-- `Zen_disengage.ogg`: ZenMode was disengaged
-- `MaximizeAny.ogg`: MaximizeAny maximized the current window
+- `Zen_engage.wav`: ZenMode was engaged
+- `Zen_disengage.wav`: ZenMode was disengaged
+- `MaximizeAny.wav`: MaximizeAny maximized the current window
+- `UniversalAdvance_engage.wav`: UniversalAdvance was engaged (ScrollLock is now ON)
+- `UniversalAdvance_disengage.wav`: UniversalAdvance was disengaged (ScrollLock is now OFF)
 
 # License <a href="https://github.com/UnexomWid/PowerMacros/blob/master/LICENSE"><img align="right" src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" /></a>
 
